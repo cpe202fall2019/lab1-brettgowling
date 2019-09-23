@@ -12,7 +12,7 @@ class Location:
         return type(other) == Location and self.lat == other.lat and self.lon == other.lon
 
     def __repr__(self):
-        print(str("Location(\'", self.name, "\',", self.lat, self.lon, ")"))
+        print("Location(\'", self.name, "\',", self.lat, self.lon, ")")
 
 def main():
     loc1 = Location("SLO", 35.3, -120.7)
