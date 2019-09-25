@@ -15,6 +15,24 @@ class TestLab1(unittest.TestCase):
         tlist = []
         self.assertEqual(max_list_iter(tlist), None)
 
+    def test_max_list_iter_norm(self):
+        """Tests potential lists"""
+        alist = [1, 2, 3]
+        blist = [2, 3, 1]
+        clist = [3, 2, 1]
+        dlist = [-1, 0, 1]
+        elist = [1, -1, 0]
+        flist = [1, 1, 1]
+        glist = [0, 0, 0]
+        self.assertEqual(max_list_iter(alist), 3)
+        self.assertEqual(max_list_iter(blist), 3)
+        self.assertEqual(max_list_iter(clist), 3)
+        self.assertEqual(max_list_iter(dlist), 1)
+        self.assertEqual(max_list_iter(elist), 1)
+        self.assertEqual(max_list_iter(flist), 1)
+        self.assertEqual(max_list_iter(glist), 0)
+
+
 
     def test_reverse_rec(self):
         self.assertEqual(reverse_rec([1,2,3]),[3,2,1])
