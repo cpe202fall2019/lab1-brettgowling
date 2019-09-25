@@ -3,7 +3,7 @@ def max_list_iter(int_list):  # must use iteration not recursion
    If int_list is empty, returns None. If list is None, raises ValueError"""
     if int_list == None:
         raise ValueError
-    if int_list == []:
+    if len(int_list) == 0:
         return None
     max = int_list[0]
     for i in range(len(int_list)):
@@ -17,7 +17,7 @@ def reverse_rec(int_list, rec_list = []):  # must use recursion
    If list is None, raises ValueError"""
     if int_list == None:
         raise ValueError
-    if len(int_list) == 0:
+    if int_list == []:
         return None
     rec_list.append(int_list.pop())
     return reverse_rec(int_list, rec_list)
