@@ -3,7 +3,7 @@ def max_list_iter(int_list):  # must use iteration not recursion
    If int_list is empty, returns None. If list is None, raises ValueError"""
     if int_list == None:
         raise ValueError
-    if len(int_list) == 0:
+    if int_list == []:
         return None
     max = int_list[0]
     for i in range(len(int_list)):
