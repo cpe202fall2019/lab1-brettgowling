@@ -5,10 +5,16 @@ from lab1 import *
 class TestLab1(unittest.TestCase):
 
     def test_max_list_iter(self):
-        """add description here"""
+        """Tests a list of type None"""
         tlist = None
         with self.assertRaises(ValueError):  # used to check for exception
             max_list_iter(tlist)
+
+    def test_max_list_iter_empty(self):
+        """Tests an empty list"""
+        tlist = []
+        self.assertEqual(max_list_iter(tlist), None)
+
 
     def test_reverse_rec(self):
         self.assertEqual(reverse_rec([1,2,3]),[3,2,1])
