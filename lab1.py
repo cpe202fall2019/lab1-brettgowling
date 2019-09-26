@@ -5,10 +5,10 @@ def max_list_iter(int_list):  # must use iteration not recursion
         raise ValueError
     if len(int_list) == 0:
         return None
-    max = int_list[0]
-    for i in range(len(int_list)):
+    max = int_list[0] #Creates initial max value
+    for i in range(len(int_list)): #For each loop
         if int_list[i] > max:
-            max = int_list[i]
+            max = int_list[i] #Replaces max value with values greater
     return max
 
 
@@ -20,8 +20,8 @@ def reverse_rec(int_list):  # must use recursion
     if int_list == []:
         return []
     if len(int_list) == 1:
-        return int_list[-1:]
-    return int_list[-1:] + reverse_rec(int_list[:-1])
+        return int_list[-1:] #Take the last number...
+    return int_list[-1:] + reverse_rec(int_list[:-1]) #And add it to the front. Then repeat but without the last number in the original list
 
 
 def bin_search(target, low, high, int_list):  # must use recursion
@@ -31,19 +31,19 @@ def bin_search(target, low, high, int_list):  # must use recursion
         raise ValueError
     if int_list == []:
         return None
-    if len(int_list) == 1:
+    if len(int_list) == 1: #For when the list is of size 1
         if target == int_list[0]:
             return 0
         else:
             return None
-    mid = int((low + high)/2)
-    if int_list[mid] == target:
+    mid = int((low + high)/2) #find the middle index
+    if int_list[mid] == target: #If that's the target number, then stop
         return mid
-    if int_list[mid] > target:
-        if int_list[low] > target:
+    if int_list[mid] > target: #Narrow the gap
+        if int_list[low] > target: #Test if it's there at all
             return None
-        return bin_search(target, low, mid-1, int_list)
-    if int_list[mid] < target:
-        if int_list[high] < target:
+        return bin_search(target, low, mid-1, int_list) #Try another search, but smaller
+    if int_list[mid] < target: #Narrow the gap
+        if int_list[high] < target: #Test if it's there at all
             return None
-        return bin_search(target, mid+1, high, int_list)
+        return bin_search(target, mid+1, high, int_list) #Try another search, but smaller
