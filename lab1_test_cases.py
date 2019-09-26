@@ -40,6 +40,7 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(reverse_rec([1, 2]),[2,1])
         self.assertEqual(reverse_rec([]), [])
         self.assertEqual(reverse_rec([1]), [1])
+        self.assertEqual(reverse_rec([apple, orange, 1, 2, banana]), [banana, 2, 1, orange, apple])
 
     def test_bin_search(self):
         list_val =[0,1,2,3,4,7,8,9,10]
