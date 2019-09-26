@@ -52,7 +52,7 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(bin_search(9, 0, 3, list_val), None)
         self.assertEqual(bin_search(1, 2, 4, list_val), None)
         self.assertEqual(bin_search(3, 3, 3, list_val), 3)
-        self.assertEqual(bin_search(4, 3, 4, ;ist_val), 4)
+        self.assertEqual(bin_search(4, 3, 4, list_val), 4)
 
 if __name__ == "__main__":
         unittest.main()
