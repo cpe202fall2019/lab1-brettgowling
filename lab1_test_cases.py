@@ -57,5 +57,11 @@ class TestLab1(unittest.TestCase):
         list_empty = []
         self.assertEqual(bin_search(4, 0, len(list_empty)-1, list_empty), None) #Testing empty list
 
+    def test_bin_search_none(self):
+        """Tests a list of type None"""
+        tlist = None
+        with self.assertRaises(ValueError):  # used to check for exception
+            test_bin_search_none(tlist)
+
 if __name__ == "__main__":
         unittest.main()
