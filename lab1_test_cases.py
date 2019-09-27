@@ -61,7 +61,7 @@ class TestLab1(unittest.TestCase):
         """Tests a list of type None"""
         tlist = None
         with self.assertRaises(ValueError):  # used to check for exception
-            test_bin_search_none(tlist)
+            bin_search(1, 1, 1, tlist)
 
 if __name__ == "__main__":
         unittest.main()
