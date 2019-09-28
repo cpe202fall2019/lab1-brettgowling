@@ -29,21 +29,23 @@ def bin_search(target, low, high, int_list):  # must use recursion
    If target is not found returns None. If list is None, raises ValueError """
     if int_list == None:
         raise ValueError
-    if int_list == []:
+    if len(int_list) == 0:
         return None
     if len(int_list) == 1: #For when the list is of size 1
         if target == int_list[0]:
             return 0
         else:
             return None
-    mid = int((low + high)/2) #find the middle index
-    if int_list[mid] == target: #If that's the target number, then stop
-        return mid
-    if int_list[mid] > target: #Narrow the gap
-        if int_list[low] > target: #Test if it's there at all
-            return None
-        return bin_search(target, low, mid-1, int_list) #Try another search, but smaller
-    if int_list[mid] < target: #Narrow the gap
-        if int_list[high] < target: #Test if it's there at all
-            return None
-        return bin_search(target, mid+1, high, int_list) #Try another search, but smaller
+    if high >= low:
+
+        mid = int((low + high)/2) #find the middle index
+        if int_list[mid] == target: #If that's the target number, then stop
+            return mid
+        if int_list[mid] > target: #Narrow the gap
+            if int_list[low] > target: #Test if it's there at all
+                return None
+            return bin_search(target, low, mid-1, int_list) #Try another search, but smaller
+        if int_list[mid] < target: #Narrow the gap
+            if int_list[high] < target: #Test if it's there at all
+                return None
+            return bin_search(target, mid+1, high, int_list) #Try another search, but smaller
